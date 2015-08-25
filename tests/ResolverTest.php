@@ -1,6 +1,5 @@
 <?php
 
-use Notifly\Exception\NotiflyResolverException;
 use Notifly\Notifly;
 use Notifly\Type\Error;
 
@@ -18,7 +17,7 @@ class ResolverTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException NotiflyResolverException
+     * @expectedException \Notifly\Exception\NotiflyResolverException
      */
     public function resolveClassByInvalidClassName()
     {
@@ -34,5 +33,15 @@ class ResolverTest extends PHPUnit_Framework_TestCase
         $notifly = new Notifly();
         $notifly->notify('error', 'test', 'test');
         $this->assertInstanceOf(Error::class, $notifly->getNotifier());
+    }
+
+    /**
+     * @test
+     * @expectedException \Notifly\Exception\NotiflyResolverException
+     */
+    public function resolveClassByInvalidString()
+    {
+        $notifly = new Notifly();
+        $notifly->notify('error_test', 'test', 'test');
     }
 }
