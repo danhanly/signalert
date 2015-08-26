@@ -2,33 +2,50 @@
 
 namespace Notifly\Type;
 
-interface NotiflyType
+class NotiflyType
 {
     /**
-     * Adds message to notification stack, beneath the defined identifier
-     *
-     * @param string $message
-     * @param string $identifier
-     * @return bool
+     * @var string
      */
-    public function notify($message, $identifier);
+    protected $renderClass;
 
     /**
-     * Fetches all messages as part of the notification stack, beneath the defined identifier
-     *
-     * @param string $identifier
-     * @param bool $json
-     * @return array
+     * @var string
      */
-    public function fetch($identifier, $json = false);
+    protected $typeString;
+
+    /**
+     * Set basic properties
+     */
+    public function __construct()
+    {
+        $this->typeString = 'notification';
+        $this->renderClass = 'alert alert-error';
+    }
 
     /**
      * Renders all messages as part of the notification stack, beneath the defined identifier, as HTML
      *
-     * @param string $identifier
-     * @return string
+     * @param array $notifications
+     * @param bool $print
+     * @return string|void
      */
-    public function render($identifier);
+    public function render($notifications, $print = false)
+    {
+        // Create HTML output for notifications
+        $html = "<div class='{$this->renderClass}' data-type='{$this->typeString}' role='alert'><ul>";
+        foreach ($notifications as $notification) {
+            $html .= "<li>{$notification}</li>";
+        }
+        $html .= "</ul></div>";
+        // If you choose to print the notification,
+        // simply echo it, otherwise just return it
+        if ($print === true) {
+            echo $html;
+        } else {
+            return $html;
+        }
+    }
 
     /**
      * Defines what the type string should be for the class.
@@ -36,5 +53,8 @@ interface NotiflyType
      *
      * @return string
      */
-    public function defineTypeString();
+    public function getTypeString()
+    {
+        return $this->typeString;
+    }
 }

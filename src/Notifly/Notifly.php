@@ -30,6 +30,7 @@ class Notifly
         if (empty($this->notifier) === true) {
             $this->notifier = $this->resolveType($type);
         }
+        $typeString = $this->getNotifier()->getTypeString();
     }
 
     /**

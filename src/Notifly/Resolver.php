@@ -15,6 +15,7 @@ class Resolver
      */
     protected $internalTypes = [
         'error',
+        'warning',
         'info',
         'success',
     ];
@@ -52,7 +53,6 @@ class Resolver
      */
     private function typeAsClass($type)
     {
-        // @todo If this fails, how will the Project Owner know?
         try {
             // Create a reflection of the class.
             $reflect = new ReflectionClass($type);

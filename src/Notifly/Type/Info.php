@@ -2,7 +2,7 @@
 
 namespace Notifly\Type;
 
-class Error extends NotiflyType
+class Info extends NotiflyType
 {
     /**
      * Set basic properties
@@ -11,7 +11,7 @@ class Error extends NotiflyType
     {
         parent::__construct();
 
-        $this->typeString = 'error';
-        $this->renderClass = 'alert alert-error';
+        $this->typeString = 'info';
+        $this->renderClass = 'alert alert-info';
     }
 }
