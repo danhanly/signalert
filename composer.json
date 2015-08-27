@@ -1,21 +1,22 @@
 {
-    "name": "danhanly/notifly",
-    "description": "A notifications package to provide UI notifications to users and admins alike",
-    "type": "library",
-    "license": "GPL-2.0",
-    "authors": [
-        {
-            "name": "Dan Hanly",
-            "email": "danhanly@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "phpunit/phpunit": "4.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Notifly\\": "src/Notifly"
-        }
+  "name": "danhanly/notifly",
+  "description": "A notifications package to provide UI notifications to users and admins alike",
+  "type": "library",
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "Dan Hanly",
+      "email": "danhanly@gmail.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "phpunit/phpunit": "4.*",
+    "symfony/config": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Notifly\\": "src/Notifly"
+    }
+  }
 }

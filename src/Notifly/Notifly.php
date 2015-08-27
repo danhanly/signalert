@@ -4,51 +4,45 @@
  */
 namespace Notifly;
 
-use Notifly\Type\NotiflyType;
-
 class Notifly
 {
     /**
-     * @var NotiflyType
+     * Instantiate the object
      */
-    protected $notifier;
-
     public function __construct()
     {
-        // Return $this to ensure that library is chainable
+        // Return $this to ensure that library is chain-able
         return $this;
     }
 
     /**
-     * @param string $type
-     * @param string $message
-     * @param string $identifier
+     * Store the notifications
      */
-    public function notify($type, $message, $identifier)
+    public function store()
     {
-        // Create the notifier instance only if one doesn't already exist
-        if (empty($this->notifier) === true) {
-            $this->notifier = $this->resolveType($type);
-        }
-        $typeString = $this->getNotifier()->getTypeString();
+
     }
 
     /**
-     * Returns the appropriate class for
-     * @param $type
-     * @return NotiflyType
+     * Fetch the notifications
+     *
+     * @return array
      */
-    private function resolveType($type)
+    public function fetch()
+    {
+
+    }
+
+    /**
+     * Render the notifications
+     * @param string $renderer
+     */
+    public function render($renderer)
     {
         $resolver = new Resolver();
-        return $resolver->getClass($type);
-    }
+        $renderClass = $resolver->getRenderer($renderer);
 
-    /**
-     * @return NotiflyType
-     */
-    public function getNotifier()
-    {
-        return $this->notifier;
+        $notifications = $this->fetch();
+        $renderClass->render($notifications);
     }
 }

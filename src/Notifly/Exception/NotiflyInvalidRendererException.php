@@ -4,7 +4,7 @@ namespace Notifly\Exception;
 
 use Exception;
 
-class NotiflyResolverException extends Exception
+class NotiflyInvalidRendererException extends Exception
 {
 
 }
