@@ -88,7 +88,7 @@ class Config
     public function getRenderer($renderer)
     {
         $allRenderers = $this->configuration['renderers'];
-        // Does renderer currently exist?
+        // Does renderer requested by the user currently exist in the configuration?
         if (false === in_array($renderer, array_keys($allRenderers))) {
             throw new NotiflyInvalidRendererException;
         }
