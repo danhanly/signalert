@@ -28,4 +28,18 @@ class LoaderTest extends PHPUnit_Framework_TestCase
         $loader = new \Notifly\Config\Loader($locatorMock);
         $this->assertFalse($loader->supports('xmlfile.xml'));
     }
+
+    /**
+     * @covers \Notifly\Config\Loader::load
+     * @test
+     */
+    public function loadMethodReturnsData()
+    {
+        $locatorMock = $this->getMock('\Symfony\Component\Config\FileLocator');
+        $loader = new \Notifly\Config\Loader($locatorMock);
+
+        $result = $loader->load('./tests/utils/config/.notifly.yml');
+        $this->assertArrayHasKey('renderers', $result);
+        $this->assertArrayHasKey('driver', $result);
+    }
 }
