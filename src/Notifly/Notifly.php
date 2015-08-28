@@ -59,13 +59,16 @@ class Notifly
     /**
      * Render the notifications
      * @param string $renderer
+     * @param $bucket
+     * @return string|void
+     * @throws Exception\NotiflyResolverException
      */
-    public function render($renderer)
+    public function render($renderer, $bucket)
     {
         $resolver = new Resolver($this->configDirectory);
         $renderClass = $resolver->getRenderer($renderer);
 
-        $notifications = $this->fetch();
-        $renderClass->render($notifications);
+        $notifications = $this->fetch($bucket);
+        return $renderClass->render($notifications);
     }
 }

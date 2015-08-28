@@ -17,7 +17,16 @@ interface DriverInterface
      * Fetch the notifications from the driver
      *
      * @param string $bucket
+     * @param bool $flush
      * @return array
      */
-    public function fetch($bucket);
+    public function fetch($bucket, $flush = true);
+
+    /**
+     * Flush all notifications from the driver
+     *
+     * @param string $bucket
+     * @return bool
+     */
+    public function flush($bucket);
 }
