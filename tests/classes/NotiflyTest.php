@@ -2,7 +2,7 @@
 
 use Notifly\Notifly;
 
-class NotiflyTest extends PHPUnit_Framework_TestCase
+class NotiflyTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Ensure the Session is awake

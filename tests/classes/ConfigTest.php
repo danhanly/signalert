@@ -1,9 +1,10 @@
 <?php
 
+namespace Notifly\Tests;
 
 use Notifly\Config;
 
-class ConfigTest extends PHPUnit_Framework_TestCase
+class ConfigTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
