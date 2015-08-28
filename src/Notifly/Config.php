@@ -29,8 +29,20 @@ class Config
      */
     protected $configuration;
 
-    public function __construct()
+    /**
+     * The loaded Configuration File
+     *
+     * @var string
+     */
+    protected $loadedConfigurationFile;
+
+    public function __construct($searchDirectory = '')
     {
+        // If $searchDirectory is specified, add it to the top of the $configDirectories
+        if (false === empty($searchDirectory)) {
+            array_unshift($this->configDirectories, $searchDirectory);
+        }
+
         $locator = new FileLocator($this->configDirectories);
         $filePath = $locator->locate('.notifly.yml', null, true);
 
@@ -39,6 +51,8 @@ class Config
         $delegatingLoader = new DelegatingLoader($loaderResolver);
 
         $configuration = $delegatingLoader->load($filePath);
+
+        $this->loadedConfigurationFile = $filePath;
         $this->configuration = $configuration;
 
         return $this;
@@ -79,5 +93,23 @@ class Config
             throw new NotiflyInvalidRendererException;
         }
         return $this->configuration['renderers'][$renderer];
+    }
+
+    /**
+     * Retrieve all configuration directories
+     *
+     * @return array
+     */
+    public function getConfigDirectories()
+    {
+        return $this->configDirectories;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLoadedConfigurationFile()
+    {
+        return $this->loadedConfigurationFile;
     }
 }

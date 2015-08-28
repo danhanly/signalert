@@ -1,5 +1,7 @@
 <?php
 
+namespace Notifly\Tests;
+
 class InvalidInterfaceRenderer
 {
     /**

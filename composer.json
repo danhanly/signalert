@@ -18,5 +18,10 @@
     "psr-4": {
       "Notifly\\": "src/Notifly"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Notifly\\Tests\\": "tests/classes"
+    }
   }
 }

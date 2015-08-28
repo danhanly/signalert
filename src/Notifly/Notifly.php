@@ -7,10 +7,17 @@ namespace Notifly;
 class Notifly
 {
     /**
-     * Instantiate the object
+     * @var string
      */
-    public function __construct()
+    protected $configDirectory;
+
+    /**
+     * Instantiate the object
+     * @param string $configDirectory
+     */
+    public function __construct($configDirectory = '')
     {
+        $this->configDirectory = $configDirectory;
         // Return $this to ensure that library is chain-able
         return $this;
     }
@@ -39,7 +46,7 @@ class Notifly
      */
     public function render($renderer)
     {
-        $resolver = new Resolver();
+        $resolver = new Resolver($this->configDirectory);
         $renderClass = $resolver->getRenderer($renderer);
 
         $notifications = $this->fetch();

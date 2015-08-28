@@ -9,16 +9,30 @@ use ReflectionClass;
 class Resolver
 {
     /**
+     * @var string
+     */
+    protected $configDirectory;
+
+    /**
+     * @param $configDirectory
+     */
+    public function __construct($configDirectory = '')
+    {
+        $this->configDirectory = $configDirectory;
+    }
+
+    /**
      * Returns a class which matches the $type
      *
      * @param string $renderer
      * @return RendererInterface
+     * @throws Exception\NotiflyInvalidRendererException
      * @throws NotiflyResolverException
      */
     public function getRenderer($renderer)
     {
         // Attempt to retrieve the renderer config
-        $config = new Config();
+        $config = new Config($this->configDirectory);
         $rendererClass = $config->getRenderer($renderer);
         // Validate Renderer Class
         $reflection = new ReflectionClass($rendererClass);

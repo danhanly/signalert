@@ -1,6 +1,6 @@
 <?php
 
-use Notifly\Notifly;
+use Notifly\Exception\NotiflyResolverException;
 
 class ResolverTest extends PHPUnit_Framework_TestCase
 {
@@ -17,10 +17,11 @@ class ResolverTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @incompleteTest
+     * @expectedException Notifly\Exception\NotiflyResolverException
      */
     public function resolveInvalidRenderer()
     {
-
+        $resolver = new \Notifly\Resolver('./tests/config');
+        $resolver->getRenderer('invalid');
     }
 }
