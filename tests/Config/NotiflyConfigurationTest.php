@@ -26,20 +26,11 @@ class NotiflyConfigurationTest extends PHPUnit_Framework_TestCase
     public function rendererDefaults()
     {
         $locatorMock = $this->getMock('\Symfony\Component\Config\FileLocator');
-        $loader = new \Notifly\Config\Loader($locatorMock);
-        $config = $loader->load('./tests/utils/config/.norenderers.yml');
-        // Check Renderers Key has been Added
-        $this->assertArrayHasKey('renderers', $config);
-        // Check The Child Nodes have been Set
-        $this->assertArrayHasKey('error', $config['renderers']);
-        $this->assertArrayHasKey('warning', $config['renderers']);
-        $this->assertArrayHasKey('info', $config['renderers']);
-        $this->assertArrayHasKey('success', $config['renderers']);
-        // Check Default Values
-        $this->assertEquals(\Notifly\Renderer\Error::class, $config['renderers']['error']);
-        $this->assertEquals(\Notifly\Renderer\Warning::class, $config['renderers']['warning']);
-        $this->assertEquals(\Notifly\Renderer\Info::class, $config['renderers']['info']);
-        $this->assertEquals(\Notifly\Renderer\Success::class, $config['renderers']['success']);
+        $loader      = new \Notifly\Config\Loader($locatorMock);
+        $config      = $loader->load('./tests/utils/config/.norenderers.yml');
+
+        $this->assertArrayHasKey('renderer', $config);
+        $this->assertEquals(Notifly\Renderer\HtmlRenderer::class, $config['renderer']);
     }
 
     /**
