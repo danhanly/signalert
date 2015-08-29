@@ -19,7 +19,8 @@ class Config
         './',
         './config',
         './app/config',
-        './config'
+        './config',
+        './vendor/danhanly/notifly/config'
     ];
 
     /**
