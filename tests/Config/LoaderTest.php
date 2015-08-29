@@ -33,7 +33,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
      * @covers \Notifly\Config\Loader::load
      * @test
      */
-    public function loadMethodReturnsData()
+    public function loadMethodReturnsCorrectDataKeys()
     {
         $locatorMock = $this->getMock('\Symfony\Component\Config\FileLocator');
         $loader = new \Notifly\Config\Loader($locatorMock);
