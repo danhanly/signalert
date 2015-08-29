@@ -3,7 +3,8 @@
          xsi:noNamespaceSchemaLocation="phpunit.xsd"
          backupGlobals="false"
          verbose="true"
-         colors="true">
+         colors="true"
+         bootstrap="./phpunit-bootstrap.php">
 
     <testsuites>
         <testsuite name="Notifly Tests">

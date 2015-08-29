@@ -1,11 +1,16 @@
 <?php
 
+namespace Notifly\Tests;
+
+use Notifly\Renderer\HtmlRenderer;
+use Notifly\Resolver;
+
 /**
  * Class ResolverTest
  *
  * @covers \Notifly\Resolver
  */
-class ResolverTest extends PHPUnit_Framework_TestCase
+class ResolverTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -13,43 +18,9 @@ class ResolverTest extends PHPUnit_Framework_TestCase
      */
     public function resolveDefaultRenderer()
     {
-        $resolver = new \Notifly\Resolver();
-        $renderer = $resolver->getRenderer('error');
+        $resolver = new Resolver();
+        $renderer = $resolver->getRenderer();
 
-        $this->assertInstanceOf(\Notifly\Renderer\Error::class, $renderer);
-    }
-
-    /**
-     * @test
-     * @covers \Notifly\Resolver::getDriver
-     */
-    public function resolveDefaultDriver()
-    {
-        $resolver = new \Notifly\Resolver();
-        $renderer = $resolver->getDriver();
-
-        $this->assertInstanceOf(\Notifly\Storage\SessionDriver::class, $renderer);
-    }
-
-    /**
-     * @test
-     * @expectedException Notifly\Exception\NotiflyResolverException
-     * @covers \Notifly\Resolver::getRenderer
-     */
-    public function resolveInvalidRenderer()
-    {
-        $resolver = new \Notifly\Resolver('./tests/utils/config');
-        $resolver->getRenderer('invalid');
-    }
-
-    /**
-     * @test
-     * @expectedException Notifly\Exception\NotiflyResolverException
-     * @covers \Notifly\Resolver::getRenderer
-     */
-    public function resolveInvalidDriver()
-    {
-        $resolver = new \Notifly\Resolver('./tests/utils/config');
-        $resolver->getDriver();
+        $this->assertInstanceOf(HtmlRenderer::class, $renderer);
     }
 }

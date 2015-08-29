@@ -1,6 +1,3 @@
-renderers:
-  error: \Notifly\Renderer\Error
-  warning: \Notifly\Renderer\Warning
-  info: \Notifly\Renderer\Info
-  success: \Notifly\Renderer\Success
+renderer:
+  html: \Notifly\Renderer\HtmlRenderer
 driver: \Notifly\Storage\SessionDriver
