@@ -1,0 +1,3 @@
+renderers:
+  invalid: \Notifly\Tests\InvalidInterfaceRenderer
+driver: \Notifly\Tests\InvalidInterfaceDriver
