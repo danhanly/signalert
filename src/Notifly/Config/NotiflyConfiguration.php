@@ -22,7 +22,7 @@ class NotiflyConfiguration implements ConfigurationInterface
                 ->arrayNode('renderers')->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('error')->defaultValue(\Notifly\Renderer\Error::class)->end()
-                        ->scalarNode('warrning')->defaultValue(\Notifly\Renderer\Warning::class)->end()
+                        ->scalarNode('warning')->defaultValue(\Notifly\Renderer\Warning::class)->end()
                         ->scalarNode('info')->defaultValue(\Notifly\Renderer\Info::class)->end()
                         ->scalarNode('success')->defaultValue(\Notifly\Renderer\Success::class)->end()
                     ->end()
