@@ -38,7 +38,7 @@ class Resolver
         // Validate Renderer Class
         $reflection = new ReflectionClass($rendererClass);
         // Ensure class is built with the correct interface
-        if (false === $reflection->implementsInterface(RendererInterface::class)) {
+        if (false === $reflection->implementsInterface('Notifly\Renderer\RendererInterface')) {
             throw new NotiflyResolverException;
         }
         // If it all checks out, resolve the class and instantiate
@@ -59,7 +59,7 @@ class Resolver
         // Validate Driver Class
         $reflection = new ReflectionClass($driverClass);
         // Ensure class is built with the correct interface
-        if (false === $reflection->implementsInterface(DriverInterface::class)) {
+        if (false === $reflection->implementsInterface('Notifly\Storage\DriverInterface')) {
             throw new NotiflyResolverException;
         }
         // If it all checks out, resolve the class and instantiate

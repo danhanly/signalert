@@ -21,13 +21,13 @@ class NotiflyConfiguration implements ConfigurationInterface
             ->children()
                 ->arrayNode('renderers')->addDefaultsIfNotSet()
                     ->children()
-                        ->scalarNode('error')->defaultValue(\Notifly\Renderer\Error::class)->end()
-                        ->scalarNode('warning')->defaultValue(\Notifly\Renderer\Warning::class)->end()
-                        ->scalarNode('info')->defaultValue(\Notifly\Renderer\Info::class)->end()
-                        ->scalarNode('success')->defaultValue(\Notifly\Renderer\Success::class)->end()
+                        ->scalarNode('error')->defaultValue('Notifly\Renderer\Error')->end()
+                        ->scalarNode('warning')->defaultValue('Notifly\Renderer\Warning')->end()
+                        ->scalarNode('info')->defaultValue('Notifly\Renderer\Info')->end()
+                        ->scalarNode('success')->defaultValue('Notifly\Renderer\Success')->end()
                     ->end()
                 ->end()
-                ->scalarNode('driver')->defaultValue(\Notifly\Storage\SessionDriver::class)->end()
+                ->scalarNode('driver')->defaultValue('Notifly\Storage\SessionDriver')->end()
             ->end();
 
         return $treeBuilder;
