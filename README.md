@@ -1,5 +1,7 @@
-# notifly
-A customisable and extensible notifications package to provide alerts to exactly where you need them.
+# Notifly 
+__Customisable & Extensible Notifications - Providing Alerts Exactly Where You Need Them__
+
+[![Build Status](https://travis-ci.org/danhanly/notifly.svg?branch=master)](https://travis-ci.org/danhanly/notifly)
 
 Notifly makes it simple to store messages:
 
