@@ -16,7 +16,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     public function loadConfiguration()
     {
         $config = new Config();
-        $this->assertInstanceOf(Config::class, $config);
+        $this->assertInstanceOf('Notifly\Config', $config);
     }
 
     /**
@@ -28,7 +28,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $newDirectory = './tests/utils/config';
         $config = new Config($newDirectory);
 
-        $this->assertInstanceOf(Config::class, $config);
+        $this->assertInstanceOf('Notifly\Config', $config);
     }
 
     /**

@@ -16,7 +16,7 @@ class NotiflyConfigurationTest extends PHPUnit_Framework_TestCase
         $config = new \Notifly\Config\NotiflyConfiguration();
         $builder = $config->getConfigTreeBuilder();
 
-        $this->assertInstanceOf(\Symfony\Component\Config\Definition\Builder\TreeBuilder::class, $builder);
+        $this->assertInstanceOf('Symfony\Component\Config\Definition\Builder\TreeBuilder', $builder);
     }
 
     /**
@@ -36,10 +36,10 @@ class NotiflyConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('info', $config['renderers']);
         $this->assertArrayHasKey('success', $config['renderers']);
         // Check Default Values
-        $this->assertEquals(\Notifly\Renderer\Error::class, $config['renderers']['error']);
-        $this->assertEquals(\Notifly\Renderer\Warning::class, $config['renderers']['warning']);
-        $this->assertEquals(\Notifly\Renderer\Info::class, $config['renderers']['info']);
-        $this->assertEquals(\Notifly\Renderer\Success::class, $config['renderers']['success']);
+        $this->assertEquals('Notifly\Renderer\Error', $config['renderers']['error']);
+        $this->assertEquals('Notifly\Renderer\Warning', $config['renderers']['warning']);
+        $this->assertEquals('Notifly\Renderer\Info', $config['renderers']['info']);
+        $this->assertEquals('Notifly\Renderer\Success', $config['renderers']['success']);
     }
 
     /**
@@ -53,6 +53,6 @@ class NotiflyConfigurationTest extends PHPUnit_Framework_TestCase
         $config = $loader->load('./tests/utils/config/.nodriver.yml');
         // Check Driver Key has been Added
         $this->assertArrayHasKey('driver', $config);
-        $this->assertEquals(\Notifly\Storage\SessionDriver::class, $config['driver']);
+        $this->assertEquals('Notifly\Storage\SessionDriver', $config['driver']);
     }
 }

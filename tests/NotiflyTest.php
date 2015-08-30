@@ -28,7 +28,7 @@ class NotiflyTest extends PHPUnit_Framework_TestCase
         // Instantiate the object
         $notifly = new Notifly();
         // Check the returned class is correct
-        $this->assertInstanceOf(Notifly::class, $notifly);
+        $this->assertInstanceOf('Notifly\Notifly', $notifly);
     }
 
     /**

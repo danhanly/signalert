@@ -16,7 +16,7 @@ class ResolverTest extends PHPUnit_Framework_TestCase
         $resolver = new \Notifly\Resolver();
         $renderer = $resolver->getRenderer('error');
 
-        $this->assertInstanceOf(\Notifly\Renderer\Error::class, $renderer);
+        $this->assertInstanceOf('\Notifly\Renderer\Error', $renderer);
     }
 
     /**
@@ -28,7 +28,7 @@ class ResolverTest extends PHPUnit_Framework_TestCase
         $resolver = new \Notifly\Resolver();
         $renderer = $resolver->getDriver();
 
-        $this->assertInstanceOf(\Notifly\Storage\SessionDriver::class, $renderer);
+        $this->assertInstanceOf('Notifly\Storage\SessionDriver', $renderer);
     }
 
     /**
