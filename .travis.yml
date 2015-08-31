@@ -17,4 +17,9 @@ sudo: false
 install:
   - travis_retry composer install --no-interaction --prefer-source
 
-script: vendor/bin/phpunit
+script:
+  - mkdir -p build
+  - php vendor/bin/phpunit -c phpunit.xml.dist
+
+after_script:
+  - php vendor/bin/coveralls
