@@ -1,7 +1,9 @@
 # Notifly 
 __Customisable & Extensible Notifications - Providing Alerts Exactly Where You Need Them__
 
-[![Build Status](https://travis-ci.org/danhanly/notifly.svg?branch=master)](https://travis-ci.org/danhanly/notifly) [![Coverage Status](https://coveralls.io/repos/danhanly/notifly/badge.svg?branch=master&service=github)](https://coveralls.io/github/danhanly/notifly?branch=master)
+[![Build Status](https://img.shields.io/travis/danhanly/notifly.svg?style=flat-square)](https://travis-ci.org/danhanly/notifly)
+[![Coverage Status](https://img.shields.io/coveralls/danhanly/notifly.svg?style=flat-square)](https://coveralls.io/github/danhanly/notifly)
+[![License](https://img.shields.io/github/license/danhanly/notifly.svg?style=flat-square)](http://choosealicense.com/licenses/gpl-2.0/)
 
 Notifly makes it simple to store messages:
 
