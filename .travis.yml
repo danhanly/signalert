@@ -19,7 +19,7 @@ install:
 
 script:
   - mkdir -p build
-  - php vendor/bin/phpunit -c phpunit.xml.dist
+  - php vendor/bin/phpunit
 
 after_script:
   - php vendor/bin/coveralls
