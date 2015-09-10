@@ -41,7 +41,7 @@
 <p>Notifly makes it simple to render messages:</p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$notifly</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Notifly</span>();</span>
-<span class="pl-s1"><span class="pl-smi">$notifly</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>homepage<span class="pl-pds">'</span></span>);</span></pre></div>
+<span class="pl-s1"><span class="pl-smi">$notifly</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>homepage<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>);</span></pre></div>
 
 <h2>
 <a id="notifly-works-with-your-project" class="anchor" href="#notifly-works-with-your-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notifly Works With Your Project</h2>
@@ -61,15 +61,11 @@
 <h2>
 <a id="customising-notifly" class="anchor" href="#customising-notifly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customising Notifly</h2>
 
-<p>By default, notifly gives access to its SessionDriver to store messages in the default session, and also allows you to access four different types of renderer <code>error</code>, <code>warning</code>, <code>info</code> and <code>success</code> which use bootstrap display classes.</p>
+<p>By default, Notifly gives access to its SessionDriver to store messages in the default session, and also allows you to access to a simple <a href="http://getbootstrap.com/">bootstrap</a> renderer class via its BootstrapRenderer.</p>
 
 <p>You can customise any of these by writing your own classes, and specifying them within the configuration file <code>.notifly.yml</code> which should exist within your project root.</p>
 
-<div class="highlight highlight-yml"><pre><span class="pl-s"><span class="pl-ent">renderers:</span></span>
-  <span class="pl-s"><span class="pl-ent">error:</span> <span class="pl-s">\Notifly\Renderer\Error</span></span>
-  <span class="pl-s"><span class="pl-ent">warning:</span> <span class="pl-s">\Notifly\Renderer\Warning</span></span>
-  <span class="pl-s"><span class="pl-ent">info:</span> <span class="pl-s">\Notifly\Renderer\Info</span></span>
-  <span class="pl-s"><span class="pl-ent">success:</span> <span class="pl-s">\Notifly\Renderer\Success</span></span>
+<div class="highlight highlight-yml"><pre><span class="pl-s"><span class="pl-ent">renderer:</span> <span class="pl-s">\Notifly\Renderer\BootstrapRenderer</span></span>
 <span class="pl-s"><span class="pl-ent">driver:</span> <span class="pl-s">\Notifly\Storage\SessionDriver</span></span></pre></div>
 
 <p>Providing the full class name for each of these items will allow Notifly to understand and utilise them in its processes.</p>
