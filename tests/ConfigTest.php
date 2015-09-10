@@ -67,15 +67,15 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $config = new Config();
         $configsWithout = $config->getAllConfiguration();
 
-        $this->assertArrayHasKey('renderers', $configsWithout);
+        $this->assertArrayHasKey('renderer', $configsWithout);
         $this->assertArrayHasKey('driver', $configsWithout);
 
-        // Get and test all configiurations with specifying a directory
+        // Get and test all configurations with specifying a directory
         $newDirectory = './tests/utils/config';
         $config = new Config($newDirectory);
         $configsWith = $config->getAllConfiguration();
 
-        $this->assertArrayHasKey('renderers', $configsWith);
+        $this->assertArrayHasKey('renderer', $configsWith);
         $this->assertArrayHasKey('driver', $configsWith);
     }
 
@@ -96,17 +96,6 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     public function getSpecificRendererClassName()
     {
         $config = new Config();
-        $this->assertInternalType('string', $config->getRenderer('error'));
-    }
-
-    /**
-     * @covers \Notifly\Config::getRenderer
-     * @expectedException \Notifly\Exception\NotiflyInvalidRendererException
-     * @test
-     */
-    public function getInvalidRendererException()
-    {
-        $config = new Config('./tests/utils/config');
-        $this->assertInternalType('string', $config->getRenderer('missing'));
+        $this->assertInternalType('string', $config->getRenderer());
     }
 }

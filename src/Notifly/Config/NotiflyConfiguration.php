@@ -19,14 +19,7 @@ class NotiflyConfiguration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('renderers')->addDefaultsIfNotSet()
-                    ->children()
-                        ->scalarNode('error')->defaultValue('Notifly\Renderer\Error')->end()
-                        ->scalarNode('warning')->defaultValue('Notifly\Renderer\Warning')->end()
-                        ->scalarNode('info')->defaultValue('Notifly\Renderer\Info')->end()
-                        ->scalarNode('success')->defaultValue('Notifly\Renderer\Success')->end()
-                    ->end()
-                ->end()
+                ->scalarNode('renderer')->defaultValue('Notifly\Renderer\BootstrapRenderer')->end()
                 ->scalarNode('driver')->defaultValue('Notifly\Storage\SessionDriver')->end()
             ->end();
 

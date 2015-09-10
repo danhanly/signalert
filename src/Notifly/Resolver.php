@@ -23,18 +23,17 @@ class Resolver
     }
 
     /**
-     * Returns a class which matches the $type
+     * Returns a valid renderer class
      *
-     * @param string $renderer
      * @return RendererInterface
      * @throws Exception\NotiflyInvalidRendererException
      * @throws NotiflyResolverException
      */
-    public function getRenderer($renderer)
+    public function getRenderer()
     {
         // Attempt to retrieve the renderer config
         $config = new Config($this->configDirectory);
-        $rendererClass = $config->getRenderer($renderer);
+        $rendererClass = $config->getRenderer();
         // Validate Renderer Class
         $reflection = new ReflectionClass($rendererClass);
         // Ensure class is built with the correct interface

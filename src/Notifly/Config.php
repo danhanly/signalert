@@ -80,20 +80,13 @@ class Config
     }
 
     /**
-     * Identifies a specific renderer by string from the config
+     * Gets the configured renderer
      *
-     * @param string $renderer
      * @return string
-     * @throws NotiflyInvalidRendererException
      */
-    public function getRenderer($renderer)
+    public function getRenderer()
     {
-        $allRenderers = $this->configuration['renderers'];
-        // Does renderer requested by the user currently exist in the configuration?
-        if (false === in_array($renderer, array_keys($allRenderers))) {
-            throw new NotiflyInvalidRendererException;
-        }
-        return $this->configuration['renderers'][$renderer];
+        return $this->configuration['renderer'];
     }
 
     /**

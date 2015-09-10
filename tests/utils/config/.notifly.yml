@@ -1,3 +1,2 @@
-renderers:
-  invalid: \Notifly\Tests\InvalidInterfaceRenderer
+renderer: \Notifly\Tests\InvalidInterfaceRenderer
 driver: \Notifly\Tests\InvalidInterfaceDriver

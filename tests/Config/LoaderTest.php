@@ -39,7 +39,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
         $loader = new \Notifly\Config\Loader($locatorMock);
 
         $result = $loader->load('./tests/utils/config/.notifly.yml');
-        $this->assertArrayHasKey('renderers', $result);
+        $this->assertArrayHasKey('renderer', $result);
         $this->assertArrayHasKey('driver', $result);
     }
 }

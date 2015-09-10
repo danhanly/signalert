@@ -14,9 +14,9 @@ class ResolverTest extends PHPUnit_Framework_TestCase
     public function resolveDefaultRenderer()
     {
         $resolver = new \Notifly\Resolver();
-        $renderer = $resolver->getRenderer('error');
+        $renderer = $resolver->getRenderer();
 
-        $this->assertInstanceOf('\Notifly\Renderer\Error', $renderer);
+        $this->assertInstanceOf('Notifly\Renderer\BootstrapRenderer', $renderer);
     }
 
     /**
