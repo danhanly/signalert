@@ -28,7 +28,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Notifly\\Tests\\": "tests/utils/classes"
+      "Notifly\\Tests\\": "tests/utils"
     }
   },
   "extra": {

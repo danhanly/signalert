@@ -1,11 +1,13 @@
 <?php
 
+namespace Notifly\Tests;
+
 /**
  * Class LoaderTest
  *
  * @covers \Notifly\Config\Loader
  */
-class LoaderTest extends PHPUnit_Framework_TestCase
+class LoaderTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @covers \Notifly\Config\Loader::supports
