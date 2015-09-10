@@ -33,7 +33,7 @@ class ResolverTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Notifly\Exception\NotiflyResolverException
+     * @expectedException \Notifly\Exception\NotiflyResolverException
      * @covers \Notifly\Resolver::getRenderer
      */
     public function resolveInvalidRenderer()
@@ -44,7 +44,7 @@ class ResolverTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Notifly\Exception\NotiflyResolverException
+     * @expectedException \Notifly\Exception\NotiflyResolverException
      * @covers \Notifly\Resolver::getRenderer
      */
     public function resolveInvalidDriver()

@@ -28,6 +28,11 @@ class BootstrapRenderer implements RendererInterface
             throw new NotiflyRenderTypeUnsupported;
         }
 
+        // If there aren't any notifications, then return an empty string
+        if (empty($notifications) === true) {
+            return '';
+        }
+
         $html = $this->createHtmlByType($notifications, $type);
         return $html;
     }

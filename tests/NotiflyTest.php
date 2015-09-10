@@ -78,7 +78,7 @@ class NotiflyTest extends PHPUnit_Framework_TestCase
         // Store the test message beneath the a specific bucket
         $notifly->store('test message', 'test_bucket');
         // Render the message
-        $renderResult = $notifly->render('error', 'test_bucket');
+        $renderResult = $notifly->render('test_bucket', 'error');
         // Ensure it's rejected as expected
         $this->assertContains('test message', $renderResult);
     }
