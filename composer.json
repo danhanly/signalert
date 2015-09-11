@@ -3,6 +3,7 @@
   "description": "A notifications package to provide UI notifications to users and admins alike",
   "type": "library",
   "license": "GPL-2.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Dan Hanly",
@@ -33,7 +34,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "dev-master": "1.0.1"
     }
   }
 }
