@@ -3,8 +3,26 @@ __Customisable & Extensible Notifications - Providing Alerts Exactly Where You N
 
 [![Build Status](https://img.shields.io/travis/danhanly/panday.svg?style=flat-square)](https://travis-ci.org/danhanly/panday)
 [![Coverage Status](https://img.shields.io/coveralls/danhanly/panday.svg?style=flat-square)](https://coveralls.io/github/danhanly/panday)
-![Release](https://img.shields.io/github/release/danhanly/panday.svg?style=flat-square)
+[![Release](https://img.shields.io/github/release/danhanly/panday.svg?style=flat-square)](https://github.com/danhanly/panday/releases)
 [![License](https://img.shields.io/github/license/danhanly/panday.svg?style=flat-square)](http://choosealicense.com/licenses/gpl-2.0/)
+
+Panday (_noun_): Alert. Portmanteau of [MayDay](https://en.wikipedia.org/wiki/Mayday) and [Pan-pan](https://en.wikipedia.org/wiki/Pan-pan) - radio-communication alerts.
+
+Panday is a PHP notifications implementation designed to allow you to communicate effectively from anywhere in your application's code to your users.
+
+## Installing Panday
+
+Panday is a composer-enabled package, so installing it is as simple as adding it to your composer.json file:
+
+```json
+"require": {
+    "panday/panday": "dev-master"
+},
+```
+
+Then run `composer update panday/panday` to see the package installed.
+
+## How to use Panday
 
 Panday makes it simple to store messages:
 
