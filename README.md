@@ -38,9 +38,16 @@ $panday = new Panday();
 $panday->render('homepage', 'error');
 ```
 
+Panday even makes it simple to retrieve messages as an array:
+
+```php
+$panday = new Panday();
+$panday->fetch('homepage', 'error');
+```
+
 ## Customising
 
-By default, panday gives access to its SessionDriver to store messages in the default session, and also allows you to access to a simple [bootstrap](http://getbootstrap.com/) renderer classes.
+By default, Panday gives access to its SessionDriver to store messages in the default session, and also allows you to access to a simple [bootstrap](http://getbootstrap.com/) renderer classes.
 
 You can customise any of these by writing your own classes, and specifying them within the configuration file `.panday.yml` which should exist within your project root.
 
