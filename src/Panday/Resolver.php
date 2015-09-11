@@ -1,10 +1,10 @@
 <?php
 
-namespace Notifly;
+namespace Panday;
 
-use Notifly\Exception\NotiflyResolverException;
-use Notifly\Renderer\RendererInterface;
-use Notifly\Storage\DriverInterface;
+use Panday\Exception\PandayResolverException;
+use Panday\Renderer\RendererInterface;
+use Panday\Storage\DriverInterface;
 use ReflectionClass;
 
 class Resolver
@@ -26,8 +26,8 @@ class Resolver
      * Returns a valid renderer class
      *
      * @return RendererInterface
-     * @throws Exception\NotiflyInvalidRendererException
-     * @throws NotiflyResolverException
+     * @throws Exception\PandayInvalidRendererException
+     * @throws PandayResolverException
      */
     public function getRenderer()
     {
@@ -37,8 +37,8 @@ class Resolver
         // Validate Renderer Class
         $reflection = new ReflectionClass($rendererClass);
         // Ensure class is built with the correct interface
-        if (false === $reflection->implementsInterface('Notifly\Renderer\RendererInterface')) {
-            throw new NotiflyResolverException;
+        if (false === $reflection->implementsInterface('Panday\Renderer\RendererInterface')) {
+            throw new PandayResolverException;
         }
         // If it all checks out, resolve the class and instantiate
         return $reflection->newInstance();
@@ -48,7 +48,7 @@ class Resolver
      * Returns a valid driver class
      *
      * @return DriverInterface
-     * @throws NotiflyResolverException
+     * @throws PandayResolverException
      */
     public function getDriver()
     {
@@ -58,8 +58,8 @@ class Resolver
         // Validate Driver Class
         $reflection = new ReflectionClass($driverClass);
         // Ensure class is built with the correct interface
-        if (false === $reflection->implementsInterface('Notifly\Storage\DriverInterface')) {
-            throw new NotiflyResolverException;
+        if (false === $reflection->implementsInterface('Panday\Storage\DriverInterface')) {
+            throw new PandayResolverException;
         }
         // If it all checks out, resolve the class and instantiate
         return $reflection->newInstance();

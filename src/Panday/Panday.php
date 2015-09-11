@@ -1,10 +1,10 @@
 <?php
 /**
- * Notifly: UI Notifications Library
+ * Panday: UI Notifications Library
  */
-namespace Notifly;
+namespace Panday;
 
-class Notifly
+class Panday
 {
     /**
      * @var string
@@ -27,7 +27,7 @@ class Notifly
      * @param string $message The notification test
      * @param string $bucket An identifier used to categorise your message
      * @return bool
-     * @throws Exception\NotiflyResolverException
+     * @throws Exception\PandayResolverException
      */
     public function store($message, $bucket)
     {
@@ -46,7 +46,7 @@ class Notifly
      *
      * @param string $bucket
      * @return array
-     * @throws Exception\NotiflyResolverException
+     * @throws Exception\PandayResolverException
      */
     public function fetch($bucket)
     {
@@ -61,7 +61,7 @@ class Notifly
      * @param string $bucket
      * @param string $type
      * @return string|void
-     * @throws Exception\NotiflyResolverException
+     * @throws Exception\PandayResolverException
      */
     public function render($bucket, $type)
     {

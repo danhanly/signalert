@@ -3,53 +3,53 @@
 /**
  * Class ResolverTest
  *
- * @covers \Notifly\Resolver
+ * @covers \Panday\Resolver
  */
 class ResolverTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @test
-     * @covers \Notifly\Resolver::getRenderer
+     * @covers \Panday\Resolver::getRenderer
      */
     public function resolveDefaultRenderer()
     {
-        $resolver = new \Notifly\Resolver();
+        $resolver = new \Panday\Resolver();
         $renderer = $resolver->getRenderer();
 
-        $this->assertInstanceOf('Notifly\Renderer\BootstrapRenderer', $renderer);
+        $this->assertInstanceOf('Panday\Renderer\BootstrapRenderer', $renderer);
     }
 
     /**
      * @test
-     * @covers \Notifly\Resolver::getDriver
+     * @covers \Panday\Resolver::getDriver
      */
     public function resolveDefaultDriver()
     {
-        $resolver = new \Notifly\Resolver();
+        $resolver = new \Panday\Resolver();
         $renderer = $resolver->getDriver();
 
-        $this->assertInstanceOf('Notifly\Storage\SessionDriver', $renderer);
+        $this->assertInstanceOf('Panday\Storage\SessionDriver', $renderer);
     }
 
     /**
      * @test
-     * @expectedException \Notifly\Exception\NotiflyResolverException
-     * @covers \Notifly\Resolver::getRenderer
+     * @expectedException \Panday\Exception\PandayResolverException
+     * @covers \Panday\Resolver::getRenderer
      */
     public function resolveInvalidRenderer()
     {
-        $resolver = new \Notifly\Resolver('./tests/utils/config');
+        $resolver = new \Panday\Resolver('./tests/utils/config');
         $resolver->getRenderer('invalid');
     }
 
     /**
      * @test
-     * @expectedException \Notifly\Exception\NotiflyResolverException
-     * @covers \Notifly\Resolver::getRenderer
+     * @expectedException \Panday\Exception\PandayResolverException
+     * @covers \Panday\Resolver::getRenderer
      */
     public function resolveInvalidDriver()
     {
-        $resolver = new \Notifly\Resolver('./tests/utils/config');
+        $resolver = new \Panday\Resolver('./tests/utils/config');
         $resolver->getDriver();
     }
 }

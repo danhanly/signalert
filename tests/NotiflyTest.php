@@ -1,13 +1,13 @@
 <?php
 
-use Notifly\Notifly;
+use Panday\Panday;
 
 /**
- * Class NotiflyTest
+ * Class PandayTest
  *
- * @covers \Notifly\Notifly
+ * @covers \Panday\Panday
  */
-class NotiflyTest extends PHPUnit_Framework_TestCase
+class PandayTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Ensure the Session is awake
@@ -20,29 +20,29 @@ class NotiflyTest extends PHPUnit_Framework_TestCase
     /**
      * Ensure the constructor is chainable
      *
-     * @covers \Notifly\Notifly::__construct
+     * @covers \Panday\Panday::__construct
      * @test
      */
     public function chainableConstructor()
     {
         // Instantiate the object
-        $notifly = new Notifly();
+        $panday = new Panday();
         // Check the returned class is correct
-        $this->assertInstanceOf('Notifly\Notifly', $notifly);
+        $this->assertInstanceOf('Panday\Panday', $panday);
     }
 
     /**
-     * @covers \Notifly\Notifly::<public>
+     * @covers \Panday\Panday::<public>
      * @test
      */
     public function storageAndRetrieval()
     {
         // Create the notifications class
-        $notifly = new Notifly();
+        $panday = new Panday();
         // Store the test message beneath the a specific bucket
-        $notifly->store('test message', 'test_bucket');
+        $panday->store('test message', 'test_bucket');
         // Fetch all messages from the bucket
-        $messages = $notifly->fetch('test_bucket');
+        $messages = $panday->fetch('test_bucket');
         // Validate output
         $this->assertContains('test message', $messages);
     }
@@ -50,17 +50,17 @@ class NotiflyTest extends PHPUnit_Framework_TestCase
     /**
      * Matching Methods should be rejected
      *
-     * @covers \Notifly\Notifly::store
+     * @covers \Panday\Panday::store
      * @test
      */
     public function storeMatchingMessage()
     {
         // Create the notifications class
-        $notifly = new Notifly();
+        $panday = new Panday();
         // Store the test message beneath the a specific bucket
-        $notifly->store('test message', 'test_bucket');
+        $panday->store('test message', 'test_bucket');
         // Try to store the message once more
-        $success = $notifly->store('test message', 'test_bucket');
+        $success = $panday->store('test message', 'test_bucket');
         // Ensure it's rejected as expected
         $this->assertFalse($success);
     }
@@ -68,17 +68,17 @@ class NotiflyTest extends PHPUnit_Framework_TestCase
     /**
      * Matching Methods should be rejected
      *
-     * @covers \Notifly\Notifly::render
+     * @covers \Panday\Panday::render
      * @test
      */
     public function renderResult()
     {
         // Create the notifications class
-        $notifly = new Notifly();
+        $panday = new Panday();
         // Store the test message beneath the a specific bucket
-        $notifly->store('test message', 'test_bucket');
+        $panday->store('test message', 'test_bucket');
         // Render the message
-        $renderResult = $notifly->render('test_bucket', 'error');
+        $renderResult = $panday->render('test_bucket', 'error');
         // Ensure it's rejected as expected
         $this->assertContains('test message', $renderResult);
     }

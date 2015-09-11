@@ -1,9 +1,9 @@
 <?php
 
-namespace Notifly;
+namespace Panday;
 
-use Notifly\Config\Loader;
-use Notifly\Exception\NotiflyInvalidRendererException;
+use Panday\Config\Loader;
+use Panday\Exception\PandayInvalidRendererException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\DelegatingLoader;
 use Symfony\Component\Config\Loader\LoaderResolver;
@@ -20,7 +20,7 @@ class Config
         './config',
         './app/config',
         './config',
-        './vendor/danhanly/notifly/config'
+        './vendor/danhanly/panday/config'
     ];
 
     /**
@@ -45,7 +45,7 @@ class Config
         }
 
         $locator = new FileLocator($this->configDirectories);
-        $filePath = $locator->locate('.notifly.yml', null, true);
+        $filePath = $locator->locate('.panday.yml', null, true);
 
         $loader = new Loader($locator);
         $loaderResolver = new LoaderResolver([$loader]);

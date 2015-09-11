@@ -6,7 +6,7 @@
          colors="true">
 
     <testsuites>
-        <testsuite name="Notifly Tests">
+        <testsuite name="Panday Tests">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

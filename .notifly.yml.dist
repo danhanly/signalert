@@ -1,2 +1,0 @@
-renderer: \Notifly\Renderer\BootstrapRenderer
-driver: \Notifly\Storage\SessionDriver

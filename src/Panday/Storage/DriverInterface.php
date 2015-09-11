@@ -1,6 +1,6 @@
 <?php
 
-namespace Notifly\Storage;
+namespace Panday\Storage;
 
 interface DriverInterface
 {

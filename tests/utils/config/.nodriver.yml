@@ -1,1 +1,1 @@
-renderer: \Notifly\Renderer\BootstrapRenderer
+renderer: \Panday\Renderer\BootstrapRenderer

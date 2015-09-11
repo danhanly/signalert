@@ -1,48 +1,48 @@
 <?php
 
 /**
- * Class NotiflyConfigurationTest
+ * Class PandayConfigurationTest
  *
- * @covers \Notifly\Config\NotiflyConfiguration
+ * @covers \Panday\Config\PandayConfiguration
  */
-class NotiflyConfigurationTest extends PHPUnit_Framework_TestCase
+class PandayConfigurationTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers \Notifly\Config\NotiflyConfiguration::getConfigTreeBuilder
+     * @covers \Panday\Config\PandayConfiguration::getConfigTreeBuilder
      * @test
      */
     public function treeBuilder()
     {
-        $config = new \Notifly\Config\NotiflyConfiguration();
+        $config = new \Panday\Config\PandayConfiguration();
         $builder = $config->getConfigTreeBuilder();
 
         $this->assertInstanceOf('Symfony\Component\Config\Definition\Builder\TreeBuilder', $builder);
     }
 
     /**
-     * @covers \Notifly\Config\NotiflyConfiguration::getConfigTreeBuilder
+     * @covers \Panday\Config\PandayConfiguration::getConfigTreeBuilder
      * @test
      */
     public function rendererDefaults()
     {
         $locatorMock = $this->getMock('\Symfony\Component\Config\FileLocator');
-        $loader      = new \Notifly\Config\Loader($locatorMock);
+        $loader      = new \Panday\Config\Loader($locatorMock);
         $config      = $loader->load('./tests/utils/config/.norenderers.yml');
         $this->assertArrayHasKey('renderer', $config);
-        $this->assertEquals('Notifly\Renderer\BootstrapRenderer', $config['renderer']);
+        $this->assertEquals('Panday\Renderer\BootstrapRenderer', $config['renderer']);
     }
 
     /**
-     * @covers \Notifly\Config\NotiflyConfiguration::getConfigTreeBuilder
+     * @covers \Panday\Config\PandayConfiguration::getConfigTreeBuilder
      * @test
      */
     public function driverDefaults()
     {
         $locatorMock = $this->getMock('\Symfony\Component\Config\FileLocator');
-        $loader = new \Notifly\Config\Loader($locatorMock);
+        $loader = new \Panday\Config\Loader($locatorMock);
         $config = $loader->load('./tests/utils/config/.nodriver.yml');
         // Check Driver Key has been Added
         $this->assertArrayHasKey('driver', $config);
-        $this->assertEquals('Notifly\Storage\SessionDriver', $config['driver']);
+        $this->assertEquals('Panday\Storage\SessionDriver', $config['driver']);
     }
 }

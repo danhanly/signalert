@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Notifly\Config;
+namespace Panday\Config;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\Loader\FileLoader;
@@ -23,7 +23,7 @@ class Loader extends FileLoader
         $configValues = Yaml::parse(file_get_contents($resource));
 
         $processor = new Processor();
-        $configuration = new NotiflyConfiguration();
+        $configuration = new PandayConfiguration();
         $processedConfiguration = $processor->processConfiguration(
             $configuration,
             [$configValues]

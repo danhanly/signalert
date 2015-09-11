@@ -1,0 +1,2 @@
+renderer: \Panday\Tests\InvalidInterfaceRenderer
+driver: \Panday\Tests\InvalidInterfaceDriver

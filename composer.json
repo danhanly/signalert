@@ -1,5 +1,5 @@
 {
-  "name": "notifly/notifly",
+  "name": "panday/panday",
   "description": "A notifications package to provide UI notifications to users and admins alike",
   "type": "library",
   "license": "GPL-2.0",
@@ -23,12 +23,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Notifly\\": "src/Notifly"
+      "Panday\\": "src/Panday"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Notifly\\Tests\\": "tests/utils/classes"
+      "Panday\\Tests\\": "tests/utils/classes"
     }
   },
   "extra": {

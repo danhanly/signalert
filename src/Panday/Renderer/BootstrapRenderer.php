@@ -1,8 +1,8 @@
 <?php
 
-namespace Notifly\Renderer;
+namespace Panday\Renderer;
 
-use Notifly\Exception\NotiflyRenderTypeUnsupported;
+use Panday\Exception\PandayRenderTypeUnsupported;
 
 class BootstrapRenderer implements RendererInterface
 {
@@ -19,13 +19,13 @@ class BootstrapRenderer implements RendererInterface
      * @param array $notifications
      * @param string $type
      * @return string|void
-     * @throws NotiflyRenderTypeUnsupported
+     * @throws PandayRenderTypeUnsupported
      */
     public function render(array $notifications, $type = 'info')
     {
         // Ensure Type is Supported
         if (in_array($type, $this->supportedTypes) === false) {
-            throw new NotiflyRenderTypeUnsupported;
+            throw new PandayRenderTypeUnsupported;
         }
 
         // If there aren't any notifications, then return an empty string

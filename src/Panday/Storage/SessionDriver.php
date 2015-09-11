@@ -1,13 +1,13 @@
 <?php
 
-namespace Notifly\Storage;
+namespace Panday\Storage;
 
 class SessionDriver implements DriverInterface
 {
     /**
      * This is the root node for all the driver's messages
      */
-    const ROOT_NODE = 'notifly_messages';
+    const ROOT_NODE = 'panday_messages';
 
     /**
      * Store the notifications using the driver

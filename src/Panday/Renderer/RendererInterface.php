@@ -1,6 +1,6 @@
 <?php
 
-namespace Notifly\Renderer;
+namespace Panday\Renderer;
 
 interface RendererInterface
 {

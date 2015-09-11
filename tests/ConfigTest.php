@@ -1,26 +1,26 @@
 <?php
 
-use Notifly\Config;
+use Panday\Config;
 
 /**
  * Class ConfigTest
  *
- * @covers \Notifly\Config
+ * @covers \Panday\Config
  */
 class ConfigTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers \Notifly\Config::__construct
+     * @covers \Panday\Config::__construct
      * @test
      */
     public function loadConfiguration()
     {
         $config = new Config();
-        $this->assertInstanceOf('Notifly\Config', $config);
+        $this->assertInstanceOf('Panday\Config', $config);
     }
 
     /**
-     * @covers \Notifly\Config::__construct
+     * @covers \Panday\Config::__construct
      * @test
      */
     public function loadConfigurationWithSpecifiedDirectory()
@@ -28,11 +28,11 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $newDirectory = './tests/utils/config';
         $config = new Config($newDirectory);
 
-        $this->assertInstanceOf('Notifly\Config', $config);
+        $this->assertInstanceOf('Panday\Config', $config);
     }
 
     /**
-     * @covers \Notifly\Config::getConfigDirectories
+     * @covers \Panday\Config::getConfigDirectories
      * @test
      */
     public function checkApplicableDirectoriesWhenSpecifyingDirectory()
@@ -45,7 +45,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Notifly\Config::getLoadedConfigurationFile
+     * @covers \Panday\Config::getLoadedConfigurationFile
      * @test
      */
     public function checkCorrectConfigFileIsLoadedWhenSpecifyingDirectory()
@@ -54,11 +54,11 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $config = new Config($newDirectory);
         $loadedConfigurationFile = $config->getLoadedConfigurationFile();
 
-        $this->assertEquals($loadedConfigurationFile, $newDirectory . DIRECTORY_SEPARATOR . '.notifly.yml');
+        $this->assertEquals($loadedConfigurationFile, $newDirectory . DIRECTORY_SEPARATOR . '.panday.yml');
     }
 
     /**
-     * @covers \Notifly\Config::getAllConfiguration
+     * @covers \Panday\Config::getAllConfiguration
      * @test
      */
     public function getAllConfigurationsWithAndWithoutSpecifiedDirectory()
@@ -80,7 +80,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Notifly\Config::getDriver
+     * @covers \Panday\Config::getDriver
      * @test
      */
     public function getDriverClassName()
@@ -90,7 +90,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Notifly\Config::getRenderer
+     * @covers \Panday\Config::getRenderer
      * @test
      */
     public function getSpecificRendererClassName()

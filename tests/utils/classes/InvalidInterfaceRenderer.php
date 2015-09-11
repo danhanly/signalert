@@ -1,6 +1,6 @@
 <?php
 
-namespace Notifly\Tests;
+namespace Panday\Tests;
 
 class InvalidInterfaceRenderer
 {

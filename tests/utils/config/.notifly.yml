@@ -1,2 +1,0 @@
-renderer: \Notifly\Tests\InvalidInterfaceRenderer
-driver: \Notifly\Tests\InvalidInterfaceDriver
