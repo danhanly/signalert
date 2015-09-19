@@ -4,7 +4,7 @@ use Signalert\Signalert;
 /**
  * Class BootstrapRendererTest
  *
- * @covers \Signalert\Renderer\BootstrapRenderer
+ * @covers \Signalert\Renderer\FoundationRenderer
  */
 class FoundationRendererTest extends PHPUnit_Framework_TestCase
 {
@@ -42,5 +42,27 @@ class FoundationRendererTest extends PHPUnit_Framework_TestCase
         $renderer = new \Signalert\Renderer\FoundationRenderer();
         $result = $renderer->render([], 'info');
         $this->assertEmpty($result);
+    }
+
+    /**
+     * @covers \Signalert\Renderer\FoundationRenderer::render
+     * @test
+     */
+    public function renderASingleMessage()
+    {
+        $renderer = new \Signalert\Renderer\FoundationRenderer();
+        $result = $renderer->render([$this->testMessage], 'alert');
+        $this->assertNotContains('<br />', $result);
+    }
+
+    /**
+     * @covers \Signalert\Renderer\FoundationRenderer::render
+     * @test
+     */
+    public function renderMultipleMessages()
+    {
+        $renderer = new \Signalert\Renderer\FoundationRenderer();
+        $result = $renderer->render(['first message', 'second message'], 'alert');
+        $this->assertContains('<br />', $result);
     }
 }
