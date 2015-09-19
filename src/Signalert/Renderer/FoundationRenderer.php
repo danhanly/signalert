@@ -49,9 +49,7 @@ class FoundationRenderer implements RendererInterface
      */
     private function createHtmlByType(array $notifications, $type)
     {
-        $className = 'alert-' . $type;
-
-        $html = "<div class='alert-box {$className} radius' data-alert>";
+        $html = "<div class='alert-box {$type} radius' data-alert>";
         foreach ($notifications as $notification) {
             $html .= "{$notification}";
             // If it's not the last notification, add a line break for the next one
