@@ -1,11 +1,11 @@
 <?php
 
-namespace Panday\Config;
+namespace Signalert\Config;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-class PandayConfiguration implements ConfigurationInterface
+class SignalertConfiguration implements ConfigurationInterface
 {
     /**
      * Generates the configuration tree builder.
@@ -15,12 +15,12 @@ class PandayConfiguration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('panday');
+        $rootNode = $treeBuilder->root('signalert');
 
         $rootNode
             ->children()
-                ->scalarNode('renderer')->defaultValue('Panday\Renderer\BootstrapRenderer')->end()
-                ->scalarNode('driver')->defaultValue('Panday\Storage\SessionDriver')->end()
+                ->scalarNode('renderer')->defaultValue('Signalert\Renderer\BootstrapRenderer')->end()
+                ->scalarNode('driver')->defaultValue('Signalert\Storage\SessionDriver')->end()
             ->end();
 
         return $treeBuilder;

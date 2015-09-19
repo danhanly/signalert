@@ -1,1 +1,1 @@
-renderer: \Panday\Renderer\BootstrapRenderer
+renderer: \Signalert\Renderer\BootstrapRenderer

@@ -1,2 +1,0 @@
-renderer: \Panday\Renderer\BootstrapRenderer
-driver: \Panday\Storage\SessionDriver

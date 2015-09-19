@@ -1,6 +1,6 @@
 <?php
 
-namespace Panday\Storage;
+namespace Signalert\Storage;
 
 interface DriverInterface
 {

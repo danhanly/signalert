@@ -1,26 +1,26 @@
 <?php
 
-use Panday\Config;
+use Signalert\Config;
 
 /**
  * Class ConfigTest
  *
- * @covers \Panday\Config
+ * @covers \Signalert\Config
  */
 class ConfigTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers \Panday\Config::__construct
+     * @covers \Signalert\Config::__construct
      * @test
      */
     public function loadConfiguration()
     {
         $config = new Config();
-        $this->assertInstanceOf('Panday\Config', $config);
+        $this->assertInstanceOf('Signalert\Config', $config);
     }
 
     /**
-     * @covers \Panday\Config::__construct
+     * @covers \Signalert\Config::__construct
      * @test
      */
     public function loadConfigurationWithSpecifiedDirectory()
@@ -28,11 +28,11 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $newDirectory = './tests/utils/config';
         $config = new Config($newDirectory);
 
-        $this->assertInstanceOf('Panday\Config', $config);
+        $this->assertInstanceOf('Signalert\Config', $config);
     }
 
     /**
-     * @covers \Panday\Config::getConfigDirectories
+     * @covers \Signalert\Config::getConfigDirectories
      * @test
      */
     public function checkApplicableDirectoriesWhenSpecifyingDirectory()
@@ -45,7 +45,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Panday\Config::getLoadedConfigurationFile
+     * @covers \Signalert\Config::getLoadedConfigurationFile
      * @test
      */
     public function checkCorrectConfigFileIsLoadedWhenSpecifyingDirectory()
@@ -54,11 +54,11 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $config = new Config($newDirectory);
         $loadedConfigurationFile = $config->getLoadedConfigurationFile();
 
-        $this->assertEquals($loadedConfigurationFile, $newDirectory . DIRECTORY_SEPARATOR . '.panday.yml');
+        $this->assertEquals($loadedConfigurationFile, $newDirectory . DIRECTORY_SEPARATOR . '.signalert.yml');
     }
 
     /**
-     * @covers \Panday\Config::getAllConfiguration
+     * @covers \Signalert\Config::getAllConfiguration
      * @test
      */
     public function getAllConfigurationsWithAndWithoutSpecifiedDirectory()
@@ -80,7 +80,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Panday\Config::getDriver
+     * @covers \Signalert\Config::getDriver
      * @test
      */
     public function getDriverClassName()
@@ -90,7 +90,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Panday\Config::getRenderer
+     * @covers \Signalert\Config::getRenderer
      * @test
      */
     public function getSpecificRendererClassName()

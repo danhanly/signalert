@@ -1,8 +1,8 @@
 <?php
 
-namespace Panday\Renderer;
+namespace Signalert\Renderer;
 
-use Panday\Exception\PandayRenderTypeUnsupported;
+use Signalert\Exception\SignalertRenderTypeUnsupported;
 
 class BootstrapRenderer implements RendererInterface
 {
@@ -19,13 +19,13 @@ class BootstrapRenderer implements RendererInterface
      * @param array $notifications
      * @param string $type
      * @return string|void
-     * @throws PandayRenderTypeUnsupported
+     * @throws SignalertRenderTypeUnsupported
      */
     public function render(array $notifications, $type = 'info')
     {
         // Ensure Type is Supported
         if (in_array($type, $this->supportedTypes) === false) {
-            throw new PandayRenderTypeUnsupported;
+            throw new SignalertRenderTypeUnsupported;
         }
 
         // If there aren't any notifications, then return an empty string

@@ -1,45 +1,45 @@
 <?php
-use Panday\Panday;
+use Signalert\Signalert;
 
 /**
  * Class BootstrapRendererTest
  *
- * @covers \Panday\Renderer\BootstrapRenderer
+ * @covers \Signalert\Renderer\BootstrapRenderer
  */
 class BootstrapRendererTest extends PHPUnit_Framework_TestCase
 {
     protected $testMessage = 'test message';
 
     /**
-     * @covers \Panday\Renderer\BootstrapRenderer::render
+     * @covers \Signalert\Renderer\BootstrapRenderer::render
      * @test
      */
     public function renderAMessage()
     {
-        $renderer = new \Panday\Renderer\BootstrapRenderer();
+        $renderer = new \Signalert\Renderer\BootstrapRenderer();
         $result = $renderer->render([$this->testMessage], 'error');
         $this->assertInternalType('string', $result);
         $this->assertContains($this->testMessage, $result);
     }
 
     /**
-     * @covers \Panday\Renderer\BootstrapRenderer::render
-     * @expectedException \Panday\Exception\PandayRenderTypeUnsupported
+     * @covers \Signalert\Renderer\BootstrapRenderer::render
+     * @expectedException \Signalert\Exception\SignalertRenderTypeUnsupported
      * @test
      */
     public function renderUnsupportedTypeMessage()
     {
-        $renderer = new \Panday\Renderer\BootstrapRenderer();
+        $renderer = new \Signalert\Renderer\BootstrapRenderer();
         $renderer->render([$this->testMessage], 'invalid');
     }
 
     /**
-     * @covers \Panday\Renderer\BootstrapRenderer::render
+     * @covers \Signalert\Renderer\BootstrapRenderer::render
      * @test
      */
     public function renderEmptyDataset()
     {
-        $renderer = new \Panday\Renderer\BootstrapRenderer();
+        $renderer = new \Signalert\Renderer\BootstrapRenderer();
         $result = $renderer->render([], 'info');
         $this->assertEmpty($result);
     }

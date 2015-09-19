@@ -1,10 +1,10 @@
 <?php
 /**
- * Panday: UI Notifications Library
+ * Signalert: UI Notifications Library
  */
-namespace Panday;
+namespace Signalert;
 
-class Panday
+class Signalert
 {
     /**
      * @var string
@@ -27,7 +27,7 @@ class Panday
      * @param string $message The notification test
      * @param string $bucket An identifier used to categorise your message
      * @return bool
-     * @throws Exception\PandayResolverException
+     * @throws Exception\SignalertResolverException
      */
     public function store($message, $bucket)
     {
@@ -46,7 +46,7 @@ class Panday
      *
      * @param string $bucket
      * @return array
-     * @throws Exception\PandayResolverException
+     * @throws Exception\SignalertResolverException
      */
     public function fetch($bucket)
     {
@@ -61,7 +61,7 @@ class Panday
      * @param string $bucket
      * @param string $type
      * @return string|void
-     * @throws Exception\PandayResolverException
+     * @throws Exception\SignalertResolverException
      */
     public function render($bucket, $type)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Panday\Renderer;
+namespace Signalert\Renderer;
 
 interface RendererInterface
 {

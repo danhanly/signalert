@@ -1,6 +1,6 @@
 <?php
 
-namespace Panday\Tests;
+namespace Signalert\Tests;
 
 class InvalidInterfaceRenderer
 {

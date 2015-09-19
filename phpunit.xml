@@ -6,7 +6,7 @@
          colors="true">
 
     <testsuites>
-        <testsuite name="Panday Tests">
+        <testsuite name="Signalert Tests">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

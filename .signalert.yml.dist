@@ -1,0 +1,2 @@
+renderer: \Signalert\Renderer\BootstrapRenderer
+driver: \Signalert\Storage\SessionDriver

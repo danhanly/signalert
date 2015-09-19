@@ -1,0 +1,2 @@
+renderer: \Signalert\Tests\InvalidInterfaceRenderer
+driver: \Signalert\Tests\InvalidInterfaceDriver

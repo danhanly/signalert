@@ -1,10 +1,10 @@
 <?php
 
-namespace Panday;
+namespace Signalert;
 
-use Panday\Exception\PandayResolverException;
-use Panday\Renderer\RendererInterface;
-use Panday\Storage\DriverInterface;
+use Signalert\Exception\SignalertResolverException;
+use Signalert\Renderer\RendererInterface;
+use Signalert\Storage\DriverInterface;
 use ReflectionClass;
 
 class Resolver
@@ -26,8 +26,8 @@ class Resolver
      * Returns a valid renderer class
      *
      * @return RendererInterface
-     * @throws Exception\PandayInvalidRendererException
-     * @throws PandayResolverException
+     * @throws Exception\SignalertInvalidRendererException
+     * @throws SignalertResolverException
      */
     public function getRenderer()
     {
@@ -37,8 +37,8 @@ class Resolver
         // Validate Renderer Class
         $reflection = new ReflectionClass($rendererClass);
         // Ensure class is built with the correct interface
-        if (false === $reflection->implementsInterface('Panday\Renderer\RendererInterface')) {
-            throw new PandayResolverException;
+        if (false === $reflection->implementsInterface('Signalert\Renderer\RendererInterface')) {
+            throw new SignalertResolverException;
         }
         // If it all checks out, resolve the class and instantiate
         return $reflection->newInstance();
@@ -48,7 +48,7 @@ class Resolver
      * Returns a valid driver class
      *
      * @return DriverInterface
-     * @throws PandayResolverException
+     * @throws SignalertResolverException
      */
     public function getDriver()
     {
@@ -58,8 +58,8 @@ class Resolver
         // Validate Driver Class
         $reflection = new ReflectionClass($driverClass);
         // Ensure class is built with the correct interface
-        if (false === $reflection->implementsInterface('Panday\Storage\DriverInterface')) {
-            throw new PandayResolverException;
+        if (false === $reflection->implementsInterface('Signalert\Storage\DriverInterface')) {
+            throw new SignalertResolverException;
         }
         // If it all checks out, resolve the class and instantiate
         return $reflection->newInstance();

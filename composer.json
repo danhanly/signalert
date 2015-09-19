@@ -1,5 +1,5 @@
 {
-  "name": "panday/panday",
+  "name": "signalert/signalert",
   "description": "A notifications package to provide UI notifications to users and admins alike",
   "type": "library",
   "license": "GPL-2.0",
@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Panday\\": "src/Panday"
+      "Signalert\\": "src/Signalert"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Panday\\Tests\\": "tests/utils/classes"
+      "Signalert\\Tests\\": "tests/utils/classes"
     }
   },
   "extra": {
