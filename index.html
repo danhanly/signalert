@@ -1,106 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>Signalert by danhanly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <title>Panday by danhanly</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Panday</h1>
-        <h2>Customisable &amp; Extensible Notifications - Alerts Exactly Where You Need Them</h2>
-        <a href="https://github.com/danhanly/panday" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Signalert</h1>
+      <h2 class="project-tagline">Customisable &amp; Extensible Notifications - Alerts Exactly Where You Need Them</h2>
+      <a href="https://github.com/danhanly/signalert" class="btn">View on GitHub</a>
+      <a href="https://github.com/danhanly/signalert/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/danhanly/signalert/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a id="panday" class="anchor" href="#panday" aria-hidden="true"><span class="octicon octicon-link"></span></a>Panday</h1>
+    <section class="main-content">
+      <h1>
+<a id="signalert" class="anchor" href="#signalert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Signalert</h1>
 
 <p><strong>Customisable &amp; Extensible Notifications - Alerts Exactly Where You Need Them</strong></p>
 
-<p>Panday (<em>noun</em>): Alert. Portmanteau of <a href="https://en.wikipedia.org/wiki/Mayday">MayDay</a> and <a href="https://en.wikipedia.org/wiki/Pan-pan">Pan-pan</a> - radio-communication alerts.</p>
+<p>Signalert is a PHP notifications implementation designed to allow you to communicate effectively from anywhere in your application's code to your users.</p>
 
-<p>Panday is a PHP notifications implementation designed to allow you to communicate effectively from anywhere in your application's code to your users.</p>
+<p>Signalert makes it simple to store messages:</p>
 
-<p>Panday makes it simple to store messages:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$signalert</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Signalert</span>();</span>
+<span class="pl-s1"><span class="pl-smi">$signalert</span><span class="pl-k">-&gt;</span>store(<span class="pl-s"><span class="pl-pds">'</span>Notification Name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>homepage<span class="pl-pds">'</span></span>);</span></pre></div>
 
-<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$panday</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Panday</span>();</span>
-<span class="pl-s1"><span class="pl-smi">$panday</span><span class="pl-k">-&gt;</span>store(<span class="pl-s"><span class="pl-pds">'</span>Notification Name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>homepage<span class="pl-pds">'</span></span>);</span></pre></div>
+<p>Signalert makes it simple to render messages:</p>
 
-<p>Panday makes it simple to render messages:</p>
-
-<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$panday</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Panday</span>();</span>
-<span class="pl-s1"><span class="pl-smi">$panday</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>homepage<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>);</span></pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$signalert</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Signalert</span>();</span>
+<span class="pl-s1"><span class="pl-smi">$signalert</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>homepage<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>);</span></pre></div>
 
 <h2>
-<a id="panday-works-with-your-project" class="anchor" href="#panday-works-with-your-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Panday Works With Your Project</h2>
+<a id="signalert-works-with-your-project" class="anchor" href="#signalert-works-with-your-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Signalert Works With Your Project</h2>
 
-<p>Panday, out of the box, works with the standard sessions via it's SessionDriver. Also, Panday is bundled with a series of default renderers which are pre-built using <a href="http://getbootstrap.com/components/#alerts">bootstrap alerts</a> markup.</p>
+<p>Signalert, out of the box, works with the standard sessions via it's SessionDriver. Also, Signalert is bundled with a series of default renderers which are pre-built using <a href="http://getbootstrap.com/components/#alerts">bootstrap alerts</a> markup.</p>
 
 <h3>
 <a id="do-you-have-a-specific-need-for-storage-of-notifications" class="anchor" href="#do-you-have-a-specific-need-for-storage-of-notifications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Do you have a specific need for storage of notifications?</h3>
 
-<p>Panday is extensible. It means that you can add your own drivers for storing notification data, and it will tie seamlessly into the way Panday functions. Does your project use <code>memcached</code> or <code>redis</code>? Does your project save session data to the database? Panday can be extended to support any of those mediums, and more.</p>
+<p>Signalert is extensible. It means that you can add your own drivers for storing notification data, and it will tie seamlessly into the way Signalert functions. Does your project use <code>memcached</code> or <code>redis</code>? Does your project save session data to the database? Signalert can be extended to support any of those mediums, and more.</p>
 
 <h3>
 <a id="do-you-have-a-specific-need-for-the-rendering-of-notifications" class="anchor" href="#do-you-have-a-specific-need-for-the-rendering-of-notifications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Do you have a specific need for the rendering of notifications?</h3>
 
-<p>It's an easy assumption to make that you may want your notifications to be displayed using a particular style, framework or markup. <strong>Panday has your back.</strong> Panday can be extended to add your own alert types, with your own markup and style. Panday makes it simple to plug notifications directly into your project, and make them feel at home within the design and style of your site.</p>
+<p>It's an easy assumption to make that you may want your notifications to be displayed using a particular style, framework or markup. <strong>Signalert has your back.</strong> Signalert can be extended to add your own alert types, with your own markup and style. Signalert makes it simple to plug notifications directly into your project, and make them feel at home within the design and style of your site.</p>
 
 <h2>
-<a id="customising-panday" class="anchor" href="#customising-panday" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customising Panday</h2>
+<a id="customising-signalert" class="anchor" href="#customising-signalert" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customising Signalert</h2>
 
-<p>By default, Panday gives access to its SessionDriver to store messages in the default session, and also allows you to access to a simple <a href="http://getbootstrap.com/">bootstrap</a> renderer class via its BootstrapRenderer.</p>
+<p>By default, Signalert gives access to its SessionDriver to store messages in the default session, and also allows you to access to a simple <a href="http://getbootstrap.com/">bootstrap</a> renderer class via its BootstrapRenderer.</p>
 
-<p>You can customise any of these by writing your own classes, and specifying them within the configuration file <code>.panday.yml</code> which should exist within your project root.</p>
+<p>You can customise any of these by writing your own classes, and specifying them within the configuration file <code>.signalert.yml</code> which should exist within your project root.</p>
 
-<div class="highlight highlight-yml"><pre><span class="pl-s"><span class="pl-ent">renderer:</span> <span class="pl-s">\Panday\Renderer\BootstrapRenderer</span></span>
-<span class="pl-s"><span class="pl-ent">driver:</span> <span class="pl-s">\Panday\Storage\SessionDriver</span></span></pre></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">renderer:</span> <span class="pl-s">\Signalert\Renderer\BootstrapRenderer</span></span>
+<span class="pl-s"><span class="pl-ent">driver:</span> <span class="pl-s">\Signalert\Storage\SessionDriver</span></span></pre></div>
 
-<p>Providing the full class name for each of these items will allow Panday to understand and utilise them in its processes.</p>
+<p>Providing the full class name for each of these items will allow Signalert to understand and utilise them in its processes.</p>
 
 <h3>
 <a id="extending-storage-drivers" class="anchor" href="#extending-storage-drivers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extending Storage Drivers</h3>
 
-<p>Your storage drivers have a very simple method of working. We've written an interface which provides a series of simple rules for you to work with. All you need to do is ensure your storage driver implements the following class: <code>\Panday\Storage\DriverInterface</code></p>
+<p>Your storage drivers have a very simple method of working. We've written an interface which provides a series of simple rules for you to work with. All you need to do is ensure your storage driver implements the following class: <code>\Signalert\Storage\DriverInterface</code></p>
 
 <h3>
 <a id="extending-renderers" class="anchor" href="#extending-renderers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extending Renderers</h3>
 
-<p>Your renderers have a very simple method of working. We've written an interface which provides a series of simple rules for you to work with. All you need to do is ensure your renderer implements the following class: <code>\Panday\Renderer\RendererInterface</code></p>
-        </section>
+<p>Your renderers have a very simple method of working. We've written an interface which provides a series of simple rules for you to work with. All you need to do is ensure your renderer implements the following class: <code>\Signalert\Renderer\RendererInterface</code></p>
 
-        <aside id="sidebar">
-          <a href="https://github.com/danhanly/panday/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/danhanly/panday/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/danhanly/signalert">Signalert</a> is maintained by <a href="https://github.com/danhanly">danhanly</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/danhanly/panday"></a> is maintained by <a href="https://github.com/danhanly">danhanly</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
             <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
