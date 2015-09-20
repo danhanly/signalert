@@ -24,13 +24,13 @@ class BootstrapRendererTest extends PHPUnit_Framework_TestCase
 
     /**
      * @covers \Signalert\Renderer\BootstrapRenderer::render
-     * @expectedException \Signalert\Exception\SignalertRenderTypeUnsupported
      * @test
      */
     public function renderUnsupportedTypeMessage()
     {
         $renderer = new \Signalert\Renderer\BootstrapRenderer();
-        $renderer->render([$this->testMessage], 'invalid');
+        $result = $renderer->render([$this->testMessage], 'invalid');
+        $this->assertContains('alert-info', $result);
     }
 
     /**

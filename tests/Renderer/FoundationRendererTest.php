@@ -24,13 +24,13 @@ class FoundationRendererTest extends PHPUnit_Framework_TestCase
 
     /**
      * @covers \Signalert\Renderer\FoundationRenderer::render
-     * @expectedException \Signalert\Exception\SignalertRenderTypeUnsupported
      * @test
      */
     public function renderUnsupportedTypeMessage()
     {
         $renderer = new \Signalert\Renderer\FoundationRenderer();
-        $renderer->render([$this->testMessage], 'invalid');
+        $result = $renderer->render([$this->testMessage], 'invalid');
+        $this->assertContains('info', $result);
     }
 
     /**

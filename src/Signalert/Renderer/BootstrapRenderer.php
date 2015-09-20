@@ -2,8 +2,6 @@
 
 namespace Signalert\Renderer;
 
-use Signalert\Exception\SignalertRenderTypeUnsupported;
-
 class BootstrapRenderer implements RendererInterface
 {
     protected $supportedTypes = [
@@ -19,13 +17,13 @@ class BootstrapRenderer implements RendererInterface
      * @param array $notifications
      * @param string $type
      * @return string|void
-     * @throws SignalertRenderTypeUnsupported
      */
     public function render(array $notifications, $type = 'info')
     {
         // Ensure Type is Supported
         if (in_array($type, $this->supportedTypes) === false) {
-            throw new SignalertRenderTypeUnsupported;
+            // If not, fall back to default
+            $type = 'info';
         }
 
         // If there aren't any notifications, then return an empty string
@@ -48,12 +46,16 @@ class BootstrapRenderer implements RendererInterface
     {
         $className = 'alert-' . $type;
 
-        $html = "<div class='alert {$className}' data-type='info' role='alert'><ul>";
+        $html = "<div class='alert {$className}' data-type='info' role='alert'>";
         foreach ($notifications as $notification) {
-            $html .= "<li>{$notification}</li>";
+            $html .= "{$notification}";
+            // If it's not the last notification, add a line break for the next one
+            if (end($notifications) !== $notification) {
+                $html .= "<br />";
+            }
         }
 
-        $html .= "</ul></div>";
+        $html .= "</div>";
 
         return $html;
     }
