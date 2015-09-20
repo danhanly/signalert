@@ -3,7 +3,6 @@
 namespace Signalert;
 
 use Signalert\Config\Loader;
-use Signalert\Exception\SignalertInvalidRendererException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\DelegatingLoader;
 use Symfony\Component\Config\Loader\LoaderResolver;
@@ -16,10 +15,9 @@ class Config
      * @var array
      */
     protected $configDirectories = [
-        './',
-        './config',
-        './app/config',
-        './config',
+        '',
+        'config',
+        'app/config',
     ];
 
     /**
@@ -38,8 +36,10 @@ class Config
 
     public function __construct($searchDirectory = '')
     {
+        $this->expandConfigDirectories();
         // Add the in-bundle config to the search directories
         $this->configDirectories[] = __DIR__ . '/../../config';
+        // Ensure config directories are relative paths
         // If $searchDirectory is specified, add it to the top of the $configDirectories
         if (false === empty($searchDirectory)) {
             array_unshift($this->configDirectories, $searchDirectory);
@@ -106,5 +106,17 @@ class Config
     public function getLoadedConfigurationFile()
     {
         return $this->loadedConfigurationFile;
+    }
+
+    /**
+     * Ensures that config directories are relative paths
+     */
+    private function expandConfigDirectories()
+    {
+        $newPaths = [];
+        foreach ($this->configDirectories as $filePath) {
+            $newPaths[] = __DIR__ . '/../../../../../' . $filePath;
+        }
+        $this->configDirectories = $newPaths;
     }
 }
