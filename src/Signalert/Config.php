@@ -20,7 +20,6 @@ class Config
         './config',
         './app/config',
         './config',
-        './vendor/danhanly/signalert/config'
     ];
 
     /**
@@ -39,6 +38,8 @@ class Config
 
     public function __construct($searchDirectory = '')
     {
+        // Add the in-bundle config to the search directories
+        $this->configDirectories[] = __DIR__ . '/../../config';
         // If $searchDirectory is specified, add it to the top of the $configDirectories
         if (false === empty($searchDirectory)) {
             array_unshift($this->configDirectories, $searchDirectory);
