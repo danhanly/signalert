@@ -43,4 +43,15 @@ class BootstrapRendererTest extends PHPUnit_Framework_TestCase
         $result = $renderer->render([], 'info');
         $this->assertEmpty($result);
     }
+
+    /**
+     * @covers \Signalert\Renderer\BootstrapRenderer::render
+     * @test
+     */
+    public function renderMultipleMessages()
+    {
+        $renderer = new \Signalert\Renderer\BootstrapRenderer();
+        $result = $renderer->render(['first message', 'second message'], 'alert');
+        $this->assertContains('<br />', $result);
+    }
 }
